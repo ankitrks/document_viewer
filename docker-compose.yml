@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: api_admin
+      POSTGRES_PASSWORD: bng321
+      POSTGRES_DB: viewer
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgresql://api_admin:bng321@localhost/viewer
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./document-viewer
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres_data:

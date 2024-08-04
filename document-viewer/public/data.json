@@ -1,0 +1,5 @@
+[
+  { "type": "bank-draft", "title": "Bank Draft", "position": 0 },
+  { "type": "bill-of-lading", "title": "Bill of Lading", "position": 1 },
+  { "type": "invoice", "title": "Invoice", "position": 2 }
+]
