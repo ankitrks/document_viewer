@@ -1,6 +1,15 @@
 .document-viewer {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  max-width: 750px;
+}
+
+.document-card {
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
 }
 
 .cards {
